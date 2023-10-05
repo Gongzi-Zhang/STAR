@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- job attributes
+     simulateSubmission: true/false :: generate files without submitting anything
+     filesPerHour: N :: at least N files will be read in an hour
+     maxFilesPerProcess: N :: don't take more than N files per job
+     -->
+<job minFilesPerProcess="1" maxFilesPerProcess="20" filesPerHour="3" fileListSyntax="xrootd" nProcesses="3">
+    <command> 
+	echo "Hello World"
+	echo "This job is running on node: $HOSTNAME"
+	ls
+	date
+    </command>
+    <!-- input methods:
+	 1. catalog :: preferred
+	    URL="catalog:..."
+	 2. file list :: a list of files
+	    URL="filelist:/path/nameOfList.txt"
+	 3. direct input
+	    URL="file:/star/data15/reco/productionCentral/FullField/P02ge/2001/*/*.MuDst.root"
+	 4. command input
+	    URL="command:/usr/bin/find /star/u/bob/myfiles/"
+	 -->
+    <input URL="catalog:star.bnl.gov?trgsetupname=AuAu200_production,filetype=daq_reco_MuDst,filename~st_upc,storage!=hpss",
+	nFiles="60" preferStorage="local"/>
+    <stdout URL="file:./$JOBID.out"/>
+    <stderr URL="file:./$JOBID.err"/>
+    <output fromScratch="*.histogram.root" toURL="file:/dir/of/output/"/>
+    <Sandbox installer="ZIP">
+	<Package name="Package">
+	    <File>file:.sl73_gcc485</File>
+	</Package>
+    </Sandbox>
+
+</job>

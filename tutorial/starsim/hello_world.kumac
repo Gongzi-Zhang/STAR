@@ -1,0 +1,115 @@
+* star the simulation framework with: starsim   on any sdcc nodes
+
+***** global settings *****
+* turn on debug mode
+debug on
+
+***** geometry *****
+* > detp geometry [tag] field = [value]: field is the magnetic field, unit in T
+* may want to try 'detp geometry help' first to see available settings
+detp geometry y2012
+* > make geometry: deprecated command
+* what's the difference between the following 2 commands? 
+gexec $STAR_LIB/geometry.so
+gexec $STAR_LIB/gstar.so
+
+gclose all
+
+***** generator *****
+* config pythia library
+gexec $STAR_LIB/libPythia6_4_22.so
+* > CALL PyTUNE ([tune_number])
+CALL PyTUNE (329)
+* Collision kinematics for pythia
+frame = cms
+beam = p p
+ener = 200
+
+* subprocesses
+MSEL(0)
+MSUB(MYLIST) = 1
+
+* Flag Decay modes you need as stable so that GEANT can handle them
+** These particles will be decayed by geant instead of pythia **
+MDCY (102,1)=0  ! PI0 111
+MDCY (106,1)=0  ! PI+ 211
+MDCY (109,1)=0  ! ETA 221
+MDCY (116,1)=0  ! K+ 321
+MDCY (112,1)=0  ! K_SHORT 310
+MDCY (105,1)=0  ! K_LONG 130
+MDCY (164,1)=0  ! LAMBDA0 3122
+MDCY (167,1)=0  ! SIGMA0 3212
+MDCY (162,1)=0  ! SIGMA- 3112
+MDCY (169,1)=0  ! SIGMA+ 3222
+MDCY (172,1)=0  ! Xi- 3312
+MDCY (174,1)=0  ! Xi0 3322
+MDCY (176,1)=0  ! OMEGA- 3334
+
+***** plot *****
+* show subsystems 
+* use left mouse button to navigate. click right mouse button (or choose Quit) will get you back to command mode
+display detm
+
+* draw some detector subsystem
+draw TPCE
+* or optionally define cuts
+* (order: [volume] [axis] [cut] [horiz origin] [vert origin] [horiz scale] [vert scale]) 
+* the example below will give a view of the TPC along the z axis, 
+* with a cut at z=0, and put the origin at coordinate (10, 10) of the window.
+dcut TPCE z 1 10 10
+
+* to draw everything:
+* > draw [volume] [theta] [phi] [psi] [horiz origin] [vert origin] [horiz scale] [vert scale])
+/geant/drawing/draw cave 70 30 30 10 10 0.02 0.02
+
+* save the graphic file
+/picture/print file=filename.[gif, ps, eps, or tex]
+
+* clear graphics window
+clr
+
+***** beam *****
+* define a beam with 100um transverse sigma and 60cm sigma in Z
+vsig  0.01  60.0
+* collision vertex
+* > gvertex = [XVERTEX] [YVERTEX] [ZVERTEX]       ! put X,Y, Z Vertices in cm eg:   0.0 0.0 0.0
+* > gspread = [XSIGMA] [YSIGMA] [ZSIGMA]          ! put X,Y,Z Vettices offset  in cm eg: 0.0, 0.0, 0.02
+gvertex = 0.1 0.1 30
+
+***** simulation *****
+* generate some particle tracks
+* > gkine [# tracks] [particle type] [low pT] [hi pT] [lo rapidity] [hi rapidity])
+gkine 2 8 0.1 1 -1 1
+
+* kinematic cut
+** pT
+CKIN 3 0    ! pT low
+CKIN 4 10   ! pT high
+** eta
+CKIN 13 = -2	! eta min
+CKIN 14 = 2	! eta max
+
+* seed random generator
+* > rndm [run] [set]: run is the number of runs; set = any number
+rndm 12 17
+
+* trigger event
+* > trig [Nevent]
+trig 10
+
+* finally, detect hits
+dhits
+
+* List events
+CALL PYLIST(1)
+* Printout of Pythia
+CALL PYSTAT(1)
+
+***** io *****
+gfile o output.fzd
+us/inp hijing evgen.1.nt
+
+***** miscellaneous *****
+* run shell command without exiting
+shell [some command]
+

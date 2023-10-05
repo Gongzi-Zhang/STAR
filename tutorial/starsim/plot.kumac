@@ -1,0 +1,44 @@
+*************************************
+* Example of kumac to draw STAR detector
+*************************************
+* gexec $STAR_LIB/xgeometry.so
+gexec $STAR_LIB/geometry.so
+
+dopt hide on; dopt shad off ; dopt edge on
+option nbox;     option nsta
+satt * fill 6;   satt * lwid 1
+
+satt HALL seen 0
+satt CAVE seen 0
+satt * fill 6
+satt * lwid 1
+box .
+box *  -3000. 0. 0. 3000. -2000. 1200.
+next
+gr/del 1
+dopen 1
+draw CAVE 115 160 0 10  10 .019  .019
+dclose 1
+next
+dshow 1
+dman 17 2.5 wm1
+dhead 1101 'STAR detector at RHIC' 0.65
+ 
+
+ *************************************
+ *Saving into a file
+ *************************************
+ fort/file 66 starview.ps;   meta 66 -111
+ next; dshow 1; dman  19. 2.5  wm2
+ dhead 1101 'STAR detector at RHIC' 0.65
+ close 66;    meta 0
+
+ *************************************
+ *Adding  some particles:
+ *************************************
+ *user/output   o  test.fzd
+ user/second   1
+ debug on
+ swit 2 3; swit 4 3;
+ phase 3 8   0 .5   -2 2   1.5 2;          trig;
+ *  print vert 0;   print kine 0;     print hits 0

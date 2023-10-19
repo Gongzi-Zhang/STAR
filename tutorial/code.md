@@ -28,10 +28,6 @@
     $STAR/.sl73_gcc485/include/tables/
 
 
-# methods
-StChain/StMaker.h
-    FindDataSet (GetDataSet (GetInputDS))
-
 * GetNextDaqElement
 
 

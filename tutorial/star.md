@@ -240,7 +240,8 @@
   * user home : Keep all your source code here. Location: /star/u/<username>
   * file systems (FS)
     * Tape: HPSS -- High Performance Storage System
-      > hsi	    # to get or put files on tape
+      > hsi	    # to put files on tape  
+	!!! DO NOT use 'hsi' to retrieve files from HPSS - this access mode locks tape drives for exclusive use !!!
       > carousel    # recommended: https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/carousel
     * NFS: Network FS
       also a GPFS, Generally recently produced data or re-produced data live here. 

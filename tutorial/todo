@@ -1,8 +1,10 @@
+* how to use LOG_INFO in ROOT/CINT
 * how to plot star geometry with starsim?
 * star magnetic field plot
 * star database
 * starsim
   * how to write a kuimac file?
   * how to keep only simulation events after a filter
+  * what is stored in a fzd file? Hit information?
 * data production: when will be data be produced after a run?
 * why a calorimeter need a preshower

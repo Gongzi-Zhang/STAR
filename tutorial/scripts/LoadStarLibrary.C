@@ -1,4 +1,6 @@
 /* Load STAR Library in a roo4star environment */
+#ifndef _LOADSTARLIBRARY_
+#define _LOADSTARLIBRARY_
 
 using namespace std;
 
@@ -73,14 +75,16 @@ StLibDependency LibTable[] = {
 
   // star customed
   {"St_base",		"",		kFALSE},
+  {"StarRoot",		"",		kFALSE},
   {"StarClassLibrary",	"",		kFALSE},
   {"St_Tables",		"",		kFALSE},
+  {"StTableUtilities",	"",		kFALSE},
+  {"libTable",		"",		kFALSE},
   {"libStDb_Tables",	"",		kFALSE},
   {"libgen_Tables",	"",		kFALSE},
   {"libgeometry_Tables","",		kFALSE},
   {"libsim_Tables",	"",		kFALSE},
   {"StarMagField",	"",		kFALSE},
-  {"StEpdUtil",		"",		kFALSE},
   // unknown
   {"StBichsel",		"",		kFALSE},
   {"libgsl",		"",		kFALSE},
@@ -88,9 +92,10 @@ StLibDependency LibTable[] = {
   {"libVMC",		"",		kFALSE},
 
   {"StUtilities",	"St_base",	kFALSE},
-  {"StChain",		"St_base",	kFALSE},
-  {"StBFChain",		"St_base",	kFALSE},
-  {"StEvent",		"St_base",	kFALSE},
+  {"StChain",		"St_base,StarRoot",	kFALSE},
+  {"StBFChain",		"StChain,StUtilities",	kFALSE},
+  {"StEvent",		"St_base,StarRoot,StarClassLibrary",	kFALSE},
+  {"StMcEvent",		"StEvent",	kFALSE},
   {"StDbLib",		"St_base",	kFALSE},
   {"St_g2t",		"St_base",	kFALSE},
   // makers
@@ -99,18 +104,25 @@ StLibDependency LibTable[] = {
   {"St_db_Maker",	    "StChain",	kFALSE},
   {"St_geant_Maker",	    "StChain",	kFALSE},
   {"StTriggerDataMaker",    "StChain",	kFALSE},
-  {"StMuDSTMaker",	    "StEmcUtil,StStrangeMuDstMaker",	kFALSE},
+  {"StPreEclMaker",	    "StChain,StEvent",	kFALSE},
   {"StEventUtilities",	    "StChain,StEvent",	kFALSE},
   {"StStrangeMuDstMaker",   "StChain,StEvent",	kFALSE},
+  {"StMuDSTMaker",	    "StUtilities,StEmcUtil,StStrangeMuDstMaker",	kFALSE},
 
   // sub-detectors
   {"StTofUtil",		"St_base",	kFALSE},
-  {"StPmdUtil",		"St_base",	kFALSE},
+  {"StBTofUtil",	"St_base",	kFALSE},
   {"StEmcUtil",		"StChain,StEvent,St_Tables",	kFALSE},
+  {"StPmdUtil",		"St_base",	kFALSE},
+  {"StEpdUtil",		"",		kFALSE},
+  {"StFmsUtil",		"St_base",		kFALSE},
+  // {"StFcsUtil",		"",		kFALSE},  // no such lib
+  // {"StFttUtil",		"",		kFALSE},  // no such lib
+  {"StFstUtil",		"St_base",	kFALSE},
   {"StTpcDb",		"StChain",	kFALSE},
 
   //// FCS
-  {"StFcsDbMaker",	    "StChain",	kFALSE},
+  {"StFcsDbMaker",	    "StarClassLibrary,StChain,StUtilities",	kFALSE},
   {"StFcsClusterMaker",	    "StChain,StEvent",	kFALSE},
 
   // generators
@@ -120,3 +132,5 @@ StLibDependency LibTable[] = {
   {"Pythia8_1_62",	"StarGeneratorBase",	kFALSE},
 };
 const Int_t kNumLibs = sizeof(LibTable)/sizeof(StLibDependency);
+
+#endif

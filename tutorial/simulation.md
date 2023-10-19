@@ -3,7 +3,9 @@
       Reconstruction
 
 * what information get saved and how? -- data structure
-    * generator: StEvent
+    * generator: StarGenEvent 
+    * StarPrimaryMaker: ROOT output with StarGenEvent, St_g2t_event for geant_Maker
+    * St_geant_Maker: St_g2t_event, St_g2t_vertex, St_g2t_track, St_g2t_xxx_hit
 * detector response, cross talk, electronics, etc.
 * online conditions: pedestals, gain, status tables, etc.
 * interface for offline reconstruction, like cluster finders

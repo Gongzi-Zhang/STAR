@@ -21,6 +21,7 @@ StTpcHit	StEvent		      StEvent/StTpcHit.h
 StMaker		StChain		      StChain/StMaker.h
 GetInputDs	StChain		      StChain/StMaker.h
 GetDataSet	StChain		      StChain/StMaker.h
+GetTopChain	StChain		      StChain/StMaker.h
 
 ## generator
 StarGenerator	StarGeneratorBase     StarGenerator/BASE/StarGenerator.h

@@ -1,9 +1,9 @@
-* source code: [https://github.com/star-bnl/star-sw]
-  local: $STAR/
-* class reference: [https://www.star.bnl.gov/webdata/dox/html/annotated.html]
-* coding and naming standards: [https://drupal.star.bnl.gov/STAR/comp/sofi/soft-n-libs/standards]
+* [source code](https://github.com/star-bnl/star-sw)
+  local: $STAR/StRoot/
+* [class reference](https://www.star.bnl.gov/webdata/dox/html/annotated.html)
+* [coding and naming standards](https://drupal.star.bnl.gov/STAR/comp/sofi/soft-n-libs/standards)
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # StRoot
   * macro: various example macros
   * RTS: Standalone DAQ file reader examples
@@ -119,10 +119,11 @@ StBFChain -> StChain -> StMaker -> TDataSet
     * Options can inherit from previous other options
     * Production options: [https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl]
     * Geometry options (up to 2020): [https://drupal.star.bnl.gov/STAR/comp/prod/MCGeometry]
+  * SetOptions (parse options) -> SetFlags -> Load (load libraries) -> Instantiate (create makers)
 
 
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # Database: [https://drupal.star.bnl.gov/STAR/comp/db]
   * Contains 'calibrations', 'gains', 'geometry transformations', etc.
   * Access to Database information is done via `StMaker::GetDataBase()` method
@@ -134,9 +135,9 @@ StBFChain -> StChain -> StMaker -> TDataSet
     2. $STAR/StarDb -- from current STAR Library version through AFS
     3. MySQL database 
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # MuDST
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # GEANT
 * Giant3: $STAR/asps/rexe/TGeant3/

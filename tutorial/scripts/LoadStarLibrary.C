@@ -96,12 +96,16 @@ StLibDependency LibTable[] = {
   {"StBFChain",		"StChain,StUtilities",	kFALSE},
   {"StEvent",		"St_base,StarRoot,StarClassLibrary",	kFALSE},
   {"StMcEvent",		"StEvent",	kFALSE},
-  {"StDbLib",		"St_base",	kFALSE},
   {"St_g2t",		"St_base",	kFALSE},
+
+  // Database
+  {"StDbLib",		"St_base",	kFALSE},
+  {"StDbBroker",	"StDbLib,StUtilities",	kFALSE},
+
   // makers
   {"StTreeMaker",	    "StChain",	kFALSE},
   {"StIOMaker",		    "StChain",	kFALSE},
-  {"St_db_Maker",	    "StChain",	kFALSE},
+  {"St_db_Maker",	    "StChain,StDbBroker",	kFALSE},
   {"St_geant_Maker",	    "StChain",	kFALSE},
   {"StTriggerDataMaker",    "StChain",	kFALSE},
   {"StPreEclMaker",	    "StChain,StEvent",	kFALSE},

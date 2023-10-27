@@ -1,6 +1,6 @@
-* all RHIC runs: [https://www.rhichome.bnl.gov/RHIC/Runs/]
-* Production datasets for physics analysis: [https://www.star.bnl.gov/public/comp/prod/ProdList.html]
-* Production options: [https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl]
+* [all RHIC runs](https://www.rhichome.bnl.gov/RHIC/Runs/)
+* [Production datasets for physics analysis](https://www.star.bnl.gov/public/comp/prod/ProdList.html)
+* [Production options](https://www.star.bnl.gov/devcgi/dbProdOptionRetrv.pl)
 
 * RHIC crossing rate: ~10 MHz (9.37 MHz)
   interaction rate approach the crossing rate
@@ -15,32 +15,43 @@
 
 # collisions
   * y+b     sqrt(s_NN)/GeV
+
 2003
   * p+p     200 
   * d+Au    200 
+
 2004
   * Au+Au   62.4
+
 2014
   * Au+Au   14.5
+
 2018
   * Ru+Ru   200
   * Zr+Zr   200
+
 2019
   * Au+Au   3-30 (BES II)
   * Au+Au   100
+
 2020
   * Au+Au   3-30 (BES II)
+
 2021
   * Au+Au   BES II
   * O+O	    100
   * d+Au    100.7+100.0
+
 2022
   * p+p	    510    (polarized)
+
 2023
   * Au+Au   200
+
 2024 (planned)
   * p+p	    200
   * p+Au    200
+
 2025 (planned)
   * Au+Au   200
 

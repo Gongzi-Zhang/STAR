@@ -1,12 +1,12 @@
-#-----------------------------------------------------------------------------
-# STAR Subsystems: [https://www.star.bnl.gov/public/html/subs.html]
-  NIM papers [https://www.star.bnl.gov/public/tpc/NimPapers/index.htm] 
+------------------------------------------------------------------------------
+# [STAR Subsystems](https://www.star.bnl.gov/public/html/subs.html)
+  [NIM papers](https://www.star.bnl.gov/public/tpc/NimPapers/index.htm) 
   * SVT: Silicon Vertex Tracker 
     * 3 cylindrical layers at distances of approximately 7, 11 and 15 cm from the beam axis
     * |η| ≤ 1, ΔΦ = 2π
     * primary interaction vertex and secondary vertex
   * SSD: Silicon Strip Detector 
-  * HFT: Heavy Flavor Tracker [https://doi.org/10.2172/887418]
+  * HFT: [Heavy Flavor Tracker](https://doi.org/10.2172/887418)
     * 2012 - 
     * upgraded for run 15 and 16
   * TPC: track, momentum and dE/dx measurement
@@ -26,7 +26,7 @@
   * GMT: GEM Chambers to Monitor the TPC Tracking (GMT)
     * 8 GEM chambers outside TPC at the TOF radius
     * help to monitor and correct the TPC distortion, allowing a TPC space resolution to be better than ~200 μm
-  * CTB: Central Trigger Barrel [https://web.archive.org/web/20050325121727/http://www.star.bnl.gov/STAR/html/trg_l/CTB/index.html]
+  * CTB: [Central Trigger Barrel](https://web.archive.org/web/20050325121727/http://www.star.bnl.gov/STAR/html/trg_l/CTB/index.html)
       measures the multiplicity of charged particles at the outer radius of the TPC and provides that information to the Level 0 trigger. [sn0326]
   * TOF: Time Of Flight (extend the dynamic range of PID to mid pT region)
     * TOFp: TOF patch (covering only 1/60 in azimuth and -1 ≤ η ≤ 0), before full installation
@@ -159,7 +159,7 @@
       that of one neutron in each of the forward ZDCs, which corresponds to 95% of the geometrical cross-section. 
 
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # jargons
     * RCF: RHIC Computing Facility
     * BFC: Big Full Chain -- data production (reconstruction)
@@ -168,7 +168,7 @@
 	   based on the fact that these 2 sub-detectors use the same scintillators
     * G2T: Geant to Tables -- transforms the GSTAR output into a file with an appropriate 
 	   format to be read by STAF
-    * STAF: STar Analysis Framework [https://web.archive.org/web/20010204094000/http://www.rhic.bnl.gov/STAR/html/ssd_l/staf_l/STAF-current/staf.html]
+    * STAF: [STar Analysis Framework](https://web.archive.org/web/20010204094000/http://www.rhic.bnl.gov/STAR/html/ssd_l/staf_l/STAF-current/staf.html)
 	   A STAR version of PAW. 
       * It includes various useful routines, libraries, such as:
        * event generators
@@ -200,14 +200,14 @@
       * Light Flavor Spectra and UPC
       * Cold QCD (Spin)
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # STAR softwares:
 ```
-  > root4star
-  > cons    # compilation
-    # * requires the 'StRoot' dir.
-    # * local version of any modules under StRoot will take place the standard version
-  > cvs co StRoot/<Module>
+  root4star
+  cons    # compilation
+    # requires the 'StRoot' dir.
+    # local version of any modules under StRoot will take place the standard version
+  # cvs co StRoot/<Module>
 ```
 ## version
   * SLYYx - where YY is the year, and x is a letter, corresponds to data production PYYix
@@ -215,17 +215,17 @@
   * PRO - latest production version, default after login
   * NEW - a few weeks old version for full integration testing, more stable than DEV)
   ```
-    > starver SL20a   # select 20 production
-    > stardev
-    > starpro	# default
-    > starnew
+    starver SL20a   # select 20 production
+    stardev
+    starpro	# default
+    starnew
   ```
 ## misc 
   ```
-    > root2agml.py  # convert ROOT geometry to AgML
+    root2agml.py  # convert ROOT geometry to AgML
   ```
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # Data Files
 ## file storage
   * tape -- /home/starreco/ (hpss, mss): backup of everything. For whole collaboration/lab
@@ -240,9 +240,11 @@
   * user home : Keep all your source code here. Location: /star/u/<username>
   * file systems (FS)
     * Tape: HPSS -- High Performance Storage System
-      > hsi	    # to put files on tape  
-	!!! DO NOT use 'hsi' to retrieve files from HPSS - this access mode locks tape drives for exclusive use !!!
-      > carousel    # recommended: https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/carousel
+    ```
+      hsi	  # to put files on tape  
+      # !!! DO NOT use 'hsi' to retrieve files from HPSS - this access mode locks tape drives for exclusive use !!!
+      carousel    # recommended: https://drupal.star.bnl.gov/STAR/comp/sofi/tutorials/carousel
+    ```
     * NFS: Network FS
       also a GPFS, Generally recently produced data or re-produced data live here. 
       Use 'xrootd' file server to access the files (recommended).
@@ -257,8 +259,8 @@
     * xrooted: a file server that maps the filename to the read content stored in distributed disks.
       The disks connected to 'xrooted' file server is commonly referred to as distributed disks.
       ```
-      > root root://xrdstar.rcf.bnl.gov:1095/<file_path>
-      > xrdcp root://xrdstar.rcf.bnl.gov:1095/<file_path> <destination>	# cp xrooted file to your local dir.
+      root root://xrdstar.rcf.bnl.gov:1095/<file_path>
+      xrdcp root://xrdstar.rcf.bnl.gov:1095/<file_path> <destination>	# cp xrooted file to your local dir.
       ```
       * Even restored files on the cache ( /home/starlib/home/stareco/reco/... ) are not
         accessible directly. You need to use root://xrdstar.rcf.bnl.gov:1095/ prefix in
@@ -268,8 +270,8 @@
         not need xrood prefix. 
 
 ### File Management
-  * Disk space: [https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/]
-  * Machine monitoring: [http://www.star.bnl.gov/cgi-bin/protected/nova/showMachines.pl]
+  * [Disk space](https://monitoring.sdcc.bnl.gov/Facility/GCE/GPFS/)
+  * [Machine monitoring](http://www.star.bnl.gov/cgi-bin/protected/nova/showMachines.pl)
 
 ## File Types
 * Scaler file: scaler.run*.hist.dat
@@ -296,7 +298,7 @@
   * allow to work in STAR-independent environment
   * work with ROOT 5/6, Windows, Linux, MacOS
 
-## File Catalog [https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual]
+## [File Catalog](https://drupal.star.bnl.gov/STAR/comp/sofi/filecatalog/user-manual)
   * extract file
   ```
   get_file_list.pl [-all] -keys keyword[,keyword,...] 
@@ -307,35 +309,35 @@
   ```
   get_file_list.pl -keys 'path,filename' -cond 'trgsetupname=AuAu_200_production_low_2014,available=1,filetype=daq_reco_MuDst,sanity=1,filename~st_physics_14,storage=local' -onefile -delim '/'
   ```
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # Example
 * Download daq files from HPSS to RCF using 'Data Carousel'
 ```
-  > hpss_user.pl -f file.list
+  hpss_user.pl -f file.list
 ```
 * Determine the STAR version you want and switch to it
 ```
-  > starver SL17d
+  starver SL17d
 ```
 * Figure out the chain options you would like to use, which controls database, geometry, vertex finder algorithm, reconstruction code, etc
 ```
-  > DbV20171001 pp2017a StiCA btof mtd mtdCalib PicoVtxDefault fmsDat fmsPoint fpsDat BEmcChkStat OSpaceZ2 OGridLeak3D
+  DbV20171001 pp2017a StiCA btof mtd mtdCalib PicoVtxDefault fmsDat fmsPoint fpsDat BEmcChkStat OSpaceZ2 OGridLeak3D
 ```
 * Run the following command
 ```
-  > root4star -b -q -l 'bfc.C(10,”CHAIN_OPTIONS",”DAQ_FILE")'
+  root4star -b -q -l 'bfc.C(10,”CHAIN_OPTIONS",”DAQ_FILE")'
 ```
 * Output MuDst and PicoDst files have the same name as the input daq file
 * Analysis
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # Scheduler [http://www.star.bnl.gov/public/comp/Grid/scheduler/]
 
-#-----------------------------------------------------------------------------
+------------------------------------------------------------------------------
 # Resource
- * STAR papers: [https://drupal.star.bnl.gov/STAR/publications/]
- * STAR analysis notes: [https://drupal.star.bnl.gov/STAR/starnotes]
- * STAR theses: [https://drupal.star.bnl.gov/STAR/theses]
- * STAR conference presentations: [https://drupal.star.bnl.gov/STAR/presentations/]
+ * [STAR papers](https://drupal.star.bnl.gov/STAR/publications/)
+ * [STAR analysis notes](https://drupal.star.bnl.gov/STAR/starnotes)
+ * [STAR theses](https://drupal.star.bnl.gov/STAR/theses)
+ * [STAR conference presentations](https://drupal.star.bnl.gov/STAR/presentations/)
 
-* BNL cloud -- BNL box: https://bnlbox.sdcc.bnl.gov/index.php
+* BNL cloud -- [BNL box](https://bnlbox.sdcc.bnl.gov/index.php)

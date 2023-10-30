@@ -12,6 +12,10 @@ TRArray		StarRoot	      StarRoot/TRArray.h
 ## St_Tables: .sl73_gcc485/include/tables
 St_emcTriggerPed  St_Tables	      tables/St_emcTriggerPed_Table.h
 St_particle	  St_Tables	      tables/St_particle_Table.h
+St_det_user	  St_Tables	      tables/St_det_user_Table.h
+
+## St_g2t
+St_g2t_pre	  St_g2t	      g2t/St_g2t_pre_Module.h
 
 ## StEvent
 StTpcHit	StEvent		      StEvent/StTpcHit.h

@@ -160,45 +160,46 @@
 
 
 ------------------------------------------------------------------------------
-# jargons
-    * RCF: RHIC Computing Facility
-    * BFC: Big Full Chain -- data production (reconstruction)
-    * IP: interaction point
-    * CTF: Central Time of Flight -- A software module that simulates TOF and CTB
-	   based on the fact that these 2 sub-detectors use the same scintillators
-    * G2T: Geant to Tables -- transforms the GSTAR output into a file with an appropriate 
-	   format to be read by STAF
-    * STAF: [STar Analysis Framework](https://web.archive.org/web/20010204094000/http://www.rhic.bnl.gov/STAR/html/ssd_l/staf_l/STAF-current/staf.html)
-	   A STAR version of PAW. 
-      * It includes various useful routines, libraries, such as:
-       * event generators
-       * gstar
-       * g2t
-       * ...
-      * table: Basic data structure element in STAF
-    * PAW: Physics Analysis Workstation
-    * GPAW: GEANT-PAW
-    * PAM: Physics Analysis Module
-    * nσ: normalized dE/dx:
-      * nσ_X^Y = log((dE/dx)_Y/B_X)/σ_X
-        where X, Y can be e±, π±, K±, and p(pbar).
-	B_X is the expected mean dE/dx of a particle X, and σ_X is the dE/dx resolution of TPC.
-      * nσ_π distribution is a normal Gaussian distribution with an ideal calibration
-    * DSM: Data Storage and Manipulation boards
-    * DST: Data Summary Tape; 
-    * AGI: Advanced Geometry Interface for GSTAR 
-    * AgML: successor of AGI -- Another geometry Modelling Language
-      * based on xml
-      * backward compatibility with AGI
-    * EDM: (MC) Event Data Model
 
-    * PAC: Physics Analysis Coordinators
-    * PWG: Physics Worling Groups
-      * Correlations and Fluctuations
-      * Flow, Chirality and Vorticity
-      * Hard Probes
-      * Light Flavor Spectra and UPC
-      * Cold QCD (Spin)
+# Jargons
+  * RCF: RHIC Computing Facility
+  * BFC: Big Full Chain -- data production (reconstruction)
+  * IP: interaction point
+  * CTF: Central Time of Flight -- A software module that simulates TOF and CTB
+	 based on the fact that these 2 sub-detectors use the same scintillators
+  * G2T: Geant to Tables -- transforms the GSTAR output into a file with an appropriate 
+	 format to be read by STAF
+  * STAF: [STar Analysis Framework](https://web.archive.org/web/20010204094000/http://www.rhic.bnl.gov/STAR/html/ssd_l/staf_l/STAF-current/staf.html)
+	 A STAR version of PAW. 
+    * It includes various useful routines, libraries, such as:
+     * event generators
+     * gstar
+     * g2t
+     * ...
+    * table: Basic data structure element in STAF
+  * PAW: Physics Analysis Workstation
+  * GPAW: GEANT-PAW
+  * PAM: Physics Analysis Module
+  * nσ: normalized dE/dx:
+    * nσ_X^Y = log((dE/dx)_Y/B_X)/σ_X
+      where X, Y can be e±, π±, K±, and p(pbar).
+      B_X is the expected mean dE/dx of a particle X, and σ_X is the dE/dx resolution of TPC.
+    * nσ_π distribution is a normal Gaussian distribution with an ideal calibration
+  * DSM: Data Storage and Manipulation boards
+  * DST: Data Summary Tape; 
+  * AGI: Advanced Geometry Interface for GSTAR 
+  * AgML: successor of AGI -- Another geometry Modelling Language
+    * based on xml
+    * backward compatibility with AGI
+  * EDM: (MC) Event Data Model
+
+  * PAC: Physics Analysis Coordinators
+  * PWG: Physics Worling Groups
+    * Correlations and Fluctuations
+    * Flow, Chirality and Vorticity
+    * Hard Probes
+    * Light Flavor Spectra and UPC
+    * Cold QCD (Spin)
 
 ------------------------------------------------------------------------------
 # STAR softwares:
@@ -235,8 +236,8 @@
   * group ($GROUP_DIR) -- /afs/rhic/rhstar/group/: common compiled softwares, environments, utilies
   * temp -- /home/temp/<username>: scheduler temporary files, this is where the submitted job is executed. Per user
   * user_web : Access files from web. Per user. Location:
-    /afs/rhic.bnl.gov/star/users/<username>/www/ (public, accessible from https://www.star.bnl.gov/~<username>/) and
-    /afs/rhic.bnl.gov/star/doc_protected/www/spin/<username> (protected, accessible from https://www.star.bnl.gov/protected/spin/<username>/)
+    * /afs/rhic.bnl.gov/star/users/username/www/ (public, accessible from https://www.star.bnl.gov/~username/) and
+    * /afs/rhic.bnl.gov/star/doc_protected/www/spin/username (protected, accessible from https://www.star.bnl.gov/protected/spin/username/)
   * user home : Keep all your source code here. Location: /star/u/<username>
   * file systems (FS)
     * Tape: HPSS -- High Performance Storage System
@@ -331,7 +332,7 @@
 * Analysis
 
 ------------------------------------------------------------------------------
-# Scheduler [http://www.star.bnl.gov/public/comp/Grid/scheduler/]
+# [Scheduler](http://www.star.bnl.gov/public/comp/Grid/scheduler/)
 
 ------------------------------------------------------------------------------
 # Resource

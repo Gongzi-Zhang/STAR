@@ -90,6 +90,7 @@ StLibDependency LibTable[] = {
   {"libgsl",		"",		kFALSE},
   {"libgslcblas",	"",		kFALSE},
   {"libVMC",		"",		kFALSE},
+  {"g2t",		"",		kFALSE},
 
   {"StUtilities",	"St_base",	kFALSE},
   {"StChain",		"St_base,StarRoot",	kFALSE},
@@ -106,7 +107,7 @@ StLibDependency LibTable[] = {
   {"StTreeMaker",	    "StChain",	kFALSE},
   {"StIOMaker",		    "StChain",	kFALSE},
   {"St_db_Maker",	    "StChain,StDbBroker",	kFALSE},
-  {"St_geant_Maker",	    "StChain",	kFALSE},
+  {"St_geant_Maker",	    "StChain,St_Tables,St_g2t",	kFALSE},
   {"StTriggerDataMaker",    "StChain",	kFALSE},
   {"StPreEclMaker",	    "StChain,StEvent",	kFALSE},
   {"StEventUtilities",	    "StChain,StEvent",	kFALSE},

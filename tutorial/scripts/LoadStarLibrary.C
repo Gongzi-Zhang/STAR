@@ -102,6 +102,7 @@ StLibDependency LibTable[] = {
   // Database
   {"StDbLib",		"St_base",	kFALSE},
   {"StDbBroker",	"StDbLib,StUtilities",	kFALSE},
+  {"StTpcDb",		"StChain",  kFALSE},
 
   // makers
   {"StTreeMaker",	    "StChain",	kFALSE},
@@ -113,6 +114,8 @@ StLibDependency LibTable[] = {
   {"StEventUtilities",	    "StChain,StEvent",	kFALSE},
   {"StStrangeMuDstMaker",   "StChain,StEvent",	kFALSE},
   {"StMuDSTMaker",	    "StUtilities,StEmcUtil,StStrangeMuDstMaker",	kFALSE},
+  {"StDetectorDbMaker",	    "StTpcDb,St_Tables",	kFALSE},
+  {"StEventMaker",	    "StDetectorDbMaker,StEvent",	kFALSE},
 
   // sub-detectors
   {"StTofUtil",		"St_base",	kFALSE},
@@ -126,9 +129,13 @@ StLibDependency LibTable[] = {
   {"StFstUtil",		"St_base",	kFALSE},
   {"StTpcDb",		"StChain",	kFALSE},
 
+  //// FMS
+  {"StFmsDbMaker",	    "StarClassLibrary,StChain,StFmsUtil",	kFALSE},
+
   //// FCS
   {"StFcsDbMaker",	    "StarClassLibrary,StChain,StUtilities",	kFALSE},
   {"StFcsClusterMaker",	    "StChain,StEvent",	kFALSE},
+  {"StFcsRawHitMaker",	    "StMuDstMaker",	kFALSE},
 
   // generators
   {"StarGeneratorEvent","",		kFALSE},

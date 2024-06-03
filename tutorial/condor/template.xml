@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- specify the var in the command line:
+    star-submit-template -template template.xml -entities var=value,folder=/path/to/folder
+     -->
+
+<job minFilesPerProcess="1" maxFilesPerProcess="20" filesPerHour="3" fileListSyntax="xrootd" nProcesses="3">
+    <command> 
+	echo &var;
+	echo "This job is running on node: $HOSTNAME"
+	ls
+	date
+    </command>
+
+    <stdout URL="file:./$JOBID.out"/>
+    <stderr URL="file:./$JOBID.err"/>
+    <output fromScratch="*.histogram.root" toURL="file:/dir/of/output/"/>
+    <Sandbox installer="ZIP">
+	<Package name="Package">
+	    <File>file:&folder;.sl73_gcc485</File>
+	</Package>
+    </Sandbox>
+
+</job>

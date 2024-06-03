@@ -7,8 +7,16 @@
      -->
 <job minFilesPerProcess="1" maxFilesPerProcess="20" filesPerHour="3" fileListSyntax="xrootd" nProcesses="3">
     <command> 
+      <!-- The commands are executed in a tcsh. Be careful with double quote "
+	   You will get an error with the following command: Unmatched "
+	   echo "Hello \" World \""
+	   I don't know why, but that's the case, avoid using double quote inside duoble quote
+	   -->
 	echo "Hello World"
 	echo "This job is running on node: $HOSTNAME"
+	<!-- variables -->
+	@var = $JOBINDEX + 100
+	echo "$var"
 	ls
 	date
     </command>

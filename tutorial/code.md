@@ -23,9 +23,12 @@
     dir. where the source code lies in
     StRoot/
 * definition of various constant:
-    $STAR/StRoot/StEvent/StEnumerations.h
+  $STAR/StRoot/StEvent/StEnumerations.h
 * tables:
-    $STAR/.sl73_gcc485/include/tables/
+  $STAR/.sl73_gcc485/include/tables/
+  * Fcs
+    * detector offset
+    * ET gain
 
 
 * GetNextDaqElement

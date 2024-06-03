@@ -1,3 +1,5 @@
+* conversion between StFcsCluster and StMuFcsCluster (StFcsHit and StMuFcsHit)
+* KUIP command: gkine -4 0
 * how to use LOG_INFO in ROOT/CINT
 * how to plot star geometry with starsim?
 * star magnetic field plot

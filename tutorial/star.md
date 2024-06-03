@@ -44,8 +44,14 @@
         * to distinguish high momentum single photons from photon pairs resulting from π and η meson decays.
       * BPSD: Barrel Preshower Detector
       * -1 < η < 2, ΔΦ = 2π
-    * EEMC: Endcap ElectroMagnetic Calorimeter 
+      * (outdated) The barrel is segmented into 4800 towers each with a size of (Dη,DΦ) = (0.05,0.05). 
+	However, for triggering purposes, these towers are grouped in sets of 16 
+	to give 300 trigger patches each covering (Dη,DΦ) = (0.2,0.2).
+    * EEMC: (west) Endcap ElectroMagnetic Calorimeter 
       * 1.07 < η < 2.0
+      * 720 individual towers each with a size of either (Dη,DΦ) = (0.05,0.1) 
+	or (Dη,DΦ) = (0.1,0.1)
+      * Towers are grouped together to form 90 trigger patches each covering (Dη,DΦ) = (0.3,0.2)
   * MTD: Muon Telescope Detector
     * MRPC-based detector
     * |η| < 0.5
@@ -94,7 +100,13 @@
       * Material budget: ~0.5% per layer
   * FPD + FMS: Foward Pion Detector + Forward Meson Spectrometer 
     * FPD evolves into FMS (2008)
-    * FPD was added in 2003
+    * FPD
+      * added in 2003
+      * 8 lead-glass calorimeters, 4 on each side: the Up, Down, North and South calorimeters. 
+      * The Up and Down calorimeters consist of 5x5 arrays of lead-glass Cherenkov detectors. 
+      * The North and South calorimeters consist of 7x7 arrays. 
+      * The FPD detects very forward p0 particles which can tell us about the gluon distribution in the nucleus. 
+      * It is used as a local polarimeter for the polarized proton running.
     * FPS/FPOST: FMS PreShower Detector / FMS Post Shower Detector
       * scintillators with a SiPM readout
       * Monitor radiation damage by the IV scans
@@ -118,20 +130,23 @@
       * In close collaboration with EIC R&D
     * Pre-shower: use STAR EPD
   * BBC: Beam Beam Counter 
-    * 18 inner (small) and 18 outer (large) scintillator tiles
+    * two rings of scintillator tiles: 18 inner (small) and 18 outer (large) 
+      * Internally, each ring is itself divided into two separate sub-rings of 6 and 12 tiles each.
     * mounted on the East and West poletips of the STAR magnet
     * 2.1 < |η| < 5.1
-  * EPD: Event Plane Detector
+  * EPD: [Event Plane Detector](https://doi.org/10.1016/j.nima.2020.163970)
     * measure the azimuthal patterns of emitted particles, doesnot care about the
       particle species
     * plastic scintillator plane: 1.2 cm thick
-    * ±3.71 m from the center of the TPC
+    * ±3.75 m from the center of the TPC
     * 12 supersectors, 31 tiles / supersector
     * 2.14 < |η| < 5.09 (0.7 < θ < 13.5 deg)
     * ns response time for usage as a trigger
   * ZDC: Zero Degree Counter
     * Lead-fiber sampling calorimeter, one on each side
+    * ~18 m away from the IP, horiztonal acceptance: ±5 cm
     * θ < 2 mrad, |η| > 6.0
+    * time resolution: ~100 ps
   * FGT: Forward GEM tracker 
     * 2012 -
     * Triple GEM Foils
@@ -152,9 +167,16 @@
   * LEVEL3: Level 3 trigger 
   * TRG: TRiGger 
   * DAQ2K: DAQ and TRG Upgrade 
+
+# [Trigger](https://www.star.bnl.gov/public/trg/.introduction/index.html)
   * trigger detectors
     * L0: CTB, ZDC
+      * CTB measures charged multiplicity
+      * ZDC measures the number of spectator neutrons, for use as a minimum 
+        bias trigger, and act as an intra-RHIC normalizing detector. 
+	ZDC coincidence can be used to determined the vertex position and the event time
     * L1: BBC, FPD, TPC anode MWC, BEMC and EEMC
+      * BBC: The timing difference between the two BBCs will locate the primary vertex position.
     * a minimum bias trigger was obtained by selecting events with a pulse height larger than
       that of one neutron in each of the forward ZDCs, which corresponds to 95% of the geometrical cross-section. 
 
@@ -340,5 +362,8 @@
  * [STAR analysis notes](https://drupal.star.bnl.gov/STAR/starnotes)
  * [STAR theses](https://drupal.star.bnl.gov/STAR/theses)
  * [STAR conference presentations](https://drupal.star.bnl.gov/STAR/presentations/)
+ * spin blog: /afs/rich/star/doc_protected/www/spin
+  > kinit
+  > aklog
 
 * BNL cloud -- [BNL box](https://bnlbox.sdcc.bnl.gov/index.php)

@@ -4,8 +4,11 @@ LOG_INFO
 LOG_WARN
 LOG_FATAL
 
+St_base,St_Tables,StChain,StDetectorDbMaker,StBichsel,StEvent,StTpcDb,StUtilities,StDbLib,StDbBroker,St_db_Maker,StTriggerDataMaker,StEventUtilities,StBFChain
+
 ## Star Class
 StPhysicalHelixD		      StarClassLibrary/StPhysicalHelixD.hh
+StMatrix			      StarClassLibrary/StMatrix.hh
 StThreeVectorF			      StarClassLibrary/StThreeVectorF.hh
 TRArray		StarRoot	      StarRoot/TRArray.h
 
@@ -26,6 +29,10 @@ StMaker		StChain		      StChain/StMaker.h
 GetInputDs	StChain		      StChain/StMaker.h
 GetDataSet	StChain		      StChain/StMaker.h
 GetTopChain	StChain		      StChain/StMaker.h
+
+
+## makers
+St_trigDetSumC	StDetectorDbMaker     StDetectorDbMaker/St_trigDetSumsC.h
 
 ## generator
 StarGenerator	StarGeneratorBase     StarGenerator/BASE/StarGenerator.h

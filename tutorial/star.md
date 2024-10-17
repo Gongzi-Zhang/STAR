@@ -331,7 +331,12 @@
   Example
   ```
   get_file_list.pl -keys 'path,filename' -cond 'trgsetupname=AuAu_200_production_low_2014,available=1,filetype=daq_reco_MuDst,sanity=1,filename~st_physics_14,storage=local' -onefile -delim '/'
+  get_file_list.pl -keys 'path,filename' -cond 'production=P15ik,filetype=daq_reco_MuDst,trgsetupname=production_pp200trans_2015,filename~st_fms,runnumber[]16068037-16068037,sanity=1,storage!=HPSS']
   ```
+  * keywords
+  runnumber=XXX	  # for a specific run
+  runnumber[]XXX1-XXX2	# for a range of runs
+  sanity
 ------------------------------------------------------------------------------
 # Example
 * Download daq files from HPSS to RCF using 'Data Carousel'
